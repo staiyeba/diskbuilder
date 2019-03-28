@@ -9,15 +9,14 @@ install:
 
 script:
   - conan config install https://github.com/includeos/conan_config.git
-  - conan create . includeos/macstable -pr apple-clang-10-macos-toolchain
+  - conan create . includeos/maclatest -pr apple-clang-10-macos-toolchain
   - VERSION=$(conan inspect -a version . | cut -d " " -f 2)
-  - conan search diskbuilder/$VERSION@includeos/macstable
   - |
     if [ "$TRAVIS_BRANCH" == "master" ]; then
-      conan upload --all diskbuilder/$VERSION@includeos/macstable -r includeos-test
+      conan upload --all diskbuilder/$VERSION@includeos/maclatest -r includeos-test
     fi
     if [ -n "$TRAVIS_TAG" ]; then
-      conan copy --all diskbuilder/$VERSION@includeos/macstable includeos/macstable
+      conan copy --all diskbuilder/$VERSION@includeos/maclatest includeos/macstable
       conan upload --all diskbuilder/$VERSION@includeos/macstable -r includeos-test
     fi
 
