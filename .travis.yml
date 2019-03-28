@@ -16,6 +16,10 @@ script:
     if [ "$TRAVIS_BRANCH" == "master" ]; then
       conan upload --all diskbuilder/$VERSION@includeos/mactest -r includeos-test
     fi
+    if [ -n "$TRAVIS_TAG" ]; then
+      conan copy --all diskbuilder/$VERSION@includeos/mactest includeos/macstable
+      conan upload --all diskbuilder/$VERSION@includeos/macstable -r includeos-test
+    fi
 
 notifications:
   slack:
