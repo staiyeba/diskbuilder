@@ -12,7 +12,10 @@ script:
   - conan create . includeos/mactest -pr apple-clang-10-macos-toolchain
   - VERSION=$(conan inspect -a version . | cut -d " " -f 2)
   - conan search diskbuilder/$VERSION@includeos/mactest
-  - conan upload --all diskbuilder/$VERSION@includeos/mactest -r includeos-test
+  - |
+    if [ "$TRAVIS_BRANCH" = "master"]; then
+      conan upload --all diskbuilder/$VERSION@includeos/mactest -r includeos-test
+    fi
 
 notifications:
   slack:
