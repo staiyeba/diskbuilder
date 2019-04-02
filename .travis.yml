@@ -1,8 +1,8 @@
 os: osx
 language: python
 python:
-    - "3.7"
-    
+    - "3.4"
+
 compiler:
     - clang
 
