@@ -5,7 +5,6 @@ set -x
 if [[ "$(uname -s)" == 'Darwin' ]]; then
     brew update || brew update
     brew install cmake || true
+    brew install python3 || true
 fi
-pip install conan --upgrade
-pip install conan_package_tools bincrafters_package_tools
-conan user
+pip3 install conan --upgrade
