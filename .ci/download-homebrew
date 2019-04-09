@@ -1,7 +1,7 @@
 #!/bin/sh
 
 curl -O https://github.com/staiyeba/travisci-cache.git
-if [ -f homebrewcache-includeos.tar.gz ]; then
+if [ -f homebrew-cache.tar.gz ]; then
   if ! tar tf homebrew-cache.tar.gz &>/dev/null; then
     rm homebrew-cache.tar.gz
     exit 0
