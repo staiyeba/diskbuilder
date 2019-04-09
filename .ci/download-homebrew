@@ -1,0 +1,11 @@
+#!/bin/sh
+
+curl -O https://github.com/staiyeba/travisci-cache.git
+if [ -f homebrewcache-includeos.tar.gz ]; then
+  if ! tar tf homebrewcache-includeos.tar.gz &>/dev/null; then
+    rm homebrewcache-includeos.tar.gz
+    exit 0
+  fi
+  tar zxf homebrewcache-includeos.tar.gz --directory /usr/local/Cellar
+  brew link libtool conan cmake python includeos
+fi

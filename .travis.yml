@@ -5,7 +5,7 @@ compiler:
     - clang
 
 install:
-  - .ci/install.sh
+  - .ci/download-homebrew
 
 script:
   - conan config install https://github.com/includeos/conan_config.git
