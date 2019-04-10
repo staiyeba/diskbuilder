@@ -7,7 +7,7 @@ compiler:
 install:
   - git clone https://github.com/staiyeba/travisci-cache.git
   - tar zxf travisci-cache/homebrew-cache.tar.gz --directory /usr/local/Cellar conan cmake python
-  - brew link conan python3
+  - brew link conan python3 python
 
 
 script:
