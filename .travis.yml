@@ -6,7 +6,8 @@ compiler:
 
 install:
   - git clone https://github.com/staiyeba/travisci-cache.git
-  - tar zxf travisci-cache/homebrew-cache.tar.gz --directory /usr/local/Cellar brew link conan cmake python
+  - tar zxf travisci-cache/homebrew-cache.tar.gz --directory /usr/local/Cellar
+  - brew link conan cmake python
 
 
 script:
