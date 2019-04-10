@@ -16,8 +16,8 @@ script:
   - VERSION=$(conan inspect -a version . | cut -d " " -f 2)
   - |
     if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-      conan search
+      conan search diskbuilder
     fi
     if [ -n "$TRAVIS_TAG" ]; then
-      conan search
+      conan search diskbuilder
     fi
